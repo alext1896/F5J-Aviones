@@ -50,6 +50,7 @@ DROP TABLE IF EXISTS `Usuario`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Usuario` (
   `idUsuarios` int(11) NOT NULL,
+  `nombreUsuario` varchar(45) DEFAULT NULL, 
   `nombre` varchar(45) DEFAULT NULL,
   `apellidos` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
