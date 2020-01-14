@@ -10,7 +10,7 @@ public class MainF5J {
 		Usuario usuario = new Usuario (252, "alex", "alejandro", "guapache", "x");
 		
 		ControladorLogin controlador = new ControladorLogin ();
-		controlador.validarUsuario(usuario);
+		System.out.println(controlador.validarUsuario(usuario));
 		
 		
 	}

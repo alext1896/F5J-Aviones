@@ -1,5 +1,7 @@
 package controlador;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -13,23 +15,38 @@ public class ControladorLogin {
 
 		Session sesion = Utilidades.getSessionFactory().openSession();
 		sesion.beginTransaction();
-		@SuppressWarnings("unchecked")
+		@SuppressWarnings({ "unchecked"})
 		
 		Query<Usuario> query = sesion.createQuery(SELECT_USUARIO);
+
 		query.setParameter("nombreUsuario", usuario.getNombreUsuario() );
 		query.setParameter("password", usuario.getPassword());
-
-		Usuario competidor = query.uniqueResult();
+		
+		
+		List<Usuario> competidor = query.list();
+		
+		//competidor = query.list();
+		
 		sesion.getTransaction().commit();
 			
 		sesion.close();
-
-		if (competidor == null) {
-			return false;
-		}else {
-			return true;
+		
+		boolean validar = false;
+		
+		for (int i = 0; i < competidor.size(); i++) {
+			if (competidor.isEmpty()) {
+				validar = false;
+			}else {
+				validar = true;
+				for (int j = 0; j < competidor.size(); j++) {
+					System.out.println(competidor.get(j).toString());
+				}
+			}
 		}
-
+		
+		return validar;
 	}
+	
+	
 
 }
