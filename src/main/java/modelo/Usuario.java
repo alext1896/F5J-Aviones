@@ -2,40 +2,40 @@ package modelo;
 
 public class Usuario {
 
-	private int id;
+	private int numLicencia;
 	private String nombreUsuario;
 	private String nombre;
 	private String apellidos;
-	private String contraseña;
+	private String password;
 	
-	public Usuario(int id, String nombreUsuario, String nombre, String apellidos, String contraseña) {
-		this.id = id;
+	public Usuario(int numLicencia, String nombreUsuario, String nombre, String apellidos, String password) {
+		this.numLicencia = numLicencia;
 		this.nombreUsuario = nombreUsuario;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.contraseña = contraseña;
+		this.password = password;
 	}
 	
 	
-	public Usuario(String nombre, String nombreUsuario, String apellidos, String contraseña) {
+	public Usuario(String nombre, String nombreUsuario, String apellidos, String password) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.contraseña = contraseña;
+		this.password = password;
 	}
 	
 	
 	public Usuario() {
 	}
-
 	
-
-	public int getId() {
-		return id;
+	public int getNumLicencia() {
+		return numLicencia;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+
+	public void setNumLicencia(int numLicencia) {
+		this.numLicencia = numLicencia;
 	}
+
 
 	public String getNombre() {
 		return nombre;
@@ -53,12 +53,12 @@ public class Usuario {
 		this.apellidos = apellidos;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 

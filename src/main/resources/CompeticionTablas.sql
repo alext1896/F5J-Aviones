@@ -49,12 +49,12 @@ DROP TABLE IF EXISTS `Usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Usuario` (
-  `idUsuarios` int(11) NOT NULL,
+  `numLicencia` int(11) NOT NULL,
   `nombreUsuario` varchar(45) DEFAULT NULL, 
   `nombre` varchar(45) DEFAULT NULL,
   `apellidos` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idUsuarios`)
+  PRIMARY KEY (`numLicencia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
