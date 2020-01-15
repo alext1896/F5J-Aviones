@@ -19,7 +19,7 @@ public class ControladorLogin {
 		query.setParameter("nombreUsuario", usuario.getNombreUsuario() );
 		query.setParameter("password", usuario.getPassword());
 
-		Usuario competidor = query.uniqueResult();
+		Usuario competidor = (Usuario) query.uniqueResult();
 		sesion.getTransaction().commit();
 			
 		sesion.close();
