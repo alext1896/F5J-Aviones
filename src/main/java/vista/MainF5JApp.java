@@ -21,7 +21,6 @@ public class MainF5JApp extends Application  {
     
     }
     
-    
 
 	public static void main(String[] args) {
 		launch(args);
