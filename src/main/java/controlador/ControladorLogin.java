@@ -13,6 +13,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import modelo.Usuario;
 import util.Utilidades;
+import vista.MainF5JApp;
 
 public class ControladorLogin {
 
@@ -26,6 +27,9 @@ public class ControladorLogin {
 	private boolean okClicked = false;
 	
     private Stage dialogStage;
+    
+    private MainF5JApp mainApp;
+
 
 	private final static String SELECT_USUARIO = "SELECT numLicencia, nombreUsuario, nombre, apellidos, password FROM Usuario WHERE nombreUsuario = :nombreUsuario AND  password = :password";
 	
@@ -122,5 +126,13 @@ public class ControladorLogin {
 
 		return validar;
 	}
+	
+	 /**
+     * Is called by the main application to give a reference back to itself.
+     * @param mainApp
+     */
+    public void setMainApp(MainF5JApp mainApp) {
+        this.mainApp = mainApp;
+    }
 
 }
