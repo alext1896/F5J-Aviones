@@ -58,8 +58,8 @@ public class ControladorRegistro {
      */
 	@FXML
     private void handleOk() {
-        if (isInputValid()) {
-        	
+//        if (isInputValid()) {
+        	usuario = new Usuario ();
             usuario.setNumLicencia(Integer.parseInt(numLicencia.getText()));
             usuario.setNombreUsuario(nombreUsuario.getText());
             usuario.setNombre(nombre.getText());
@@ -70,7 +70,7 @@ public class ControladorRegistro {
             
             okClicked = true;
             dialogStage.close();
-        }
+//        }
     }
 
     /**

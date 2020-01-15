@@ -19,14 +19,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label styleClass="label-bright" text="Nombre:" GridPane.rowIndex="3" />
             <Label styleClass="label-bright" text="Apellidos:" GridPane.rowIndex="4" />
-            <Label styleClass="label-bright" text="Ciudad:" GridPane.rowIndex="5" />
-            <Label styleClass="label-bright" text="Fecha Nacimiento:" GridPane.rowIndex="6" />
             <Label styleClass="label-bright" text="Nº Licencia:" />
             <Label styleClass="label-bright" text="Usuario:" GridPane.rowIndex="1" />
             <Label styleClass="label-bright" text="Contraseña:" GridPane.rowIndex="2" />
@@ -35,8 +31,6 @@
             <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="nombre" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="apellidos" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
       <HBox layoutX="186.0" layoutY="255.0" spacing="10.0">
