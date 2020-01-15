@@ -15,9 +15,8 @@ public class ControladorLogin {
 
 		Session sesion = Utilidades.getSessionFactory().openSession();
 		sesion.beginTransaction();
-		@SuppressWarnings({ "unchecked"})
 		
-		Query<Usuario> query = sesion.createQuery(SELECT_USUARIO);
+		Query<Usuario> query = sesion.createNativeQuery(SELECT_USUARIO, Usuario.class);
 
 		query.setParameter("nombreUsuario", usuario.getNombreUsuario() );
 		query.setParameter("password", usuario.getPassword());
@@ -39,7 +38,7 @@ public class ControladorLogin {
 			}else {
 				validar = true;
 				for (int j = 0; j < competidor.size(); j++) {
-					System.out.println(competidor.get(j).toString());
+					System.out.println(competidor.get(j).getApellidos());
 				}
 			}
 		}
