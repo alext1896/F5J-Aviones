@@ -53,7 +53,7 @@ public class ControladorLogin {
     public boolean isOkClicked() {
         return okClicked;
     }
-
+    
     /**
      * Called when the user clicks ok.
      */
@@ -79,16 +79,19 @@ public class ControladorLogin {
 
         }
     }
-
-	public Usuario altaUsuario(Usuario usuario) {
-
-		Session sesion = Utilidades.getSessionFactory().openSession();
-		sesion.beginTransaction();
-		sesion.save(usuario);
-		sesion.getTransaction().commit();
-		sesion.close();
-		return usuario;
-	}
+	
+    /**
+     * Called when the user clicks the new button. Opens a dialog to edit
+     * details for a new person. 
+     */
+    @FXML
+    private void handleNewUsuario() {
+        Usuario tempUsuario = new Usuario();
+        boolean okClicked = mainApp.showPersonEditDialog(tempUsuario);
+//        if (okClicked) {
+//            mainApp.getPersonData().add(tempUsuario);
+//        }
+    }
 
 	public boolean validarUsuario(Usuario usuario) {
 

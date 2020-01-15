@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="300.0" minWidth="400.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.ControladorEdicionPersona">
+<AnchorPane minHeight="300.0" minWidth="400.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorRegistro">
    <children>
       <GridPane layoutX="86.0" layoutY="41.0" prefHeight="241.0" prefWidth="416.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>
@@ -30,11 +30,11 @@
             <Label styleClass="label-bright" text="Nº Licencia:" />
             <Label styleClass="label-bright" text="Usuario:" GridPane.rowIndex="1" />
             <Label styleClass="label-bright" text="Contraseña:" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="numLicencia" GridPane.columnIndex="1" />
+            <TextField fx:id="nombreUsuario" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="nombre" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="apellidos" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
