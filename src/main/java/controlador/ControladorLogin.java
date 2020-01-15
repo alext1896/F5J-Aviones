@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import modelo.Usuario;
-import sun.security.util.Password;
 import util.Utilidades;
 
 public class ControladorLogin {
@@ -27,7 +26,6 @@ public class ControladorLogin {
 	private boolean okClicked = false;
 	
     private Stage dialogStage;
-
 
 	private final static String SELECT_USUARIO = "SELECT numLicencia, nombreUsuario, nombre, apellidos, password FROM Usuario WHERE nombreUsuario = :nombreUsuario AND  password = :password";
 	
