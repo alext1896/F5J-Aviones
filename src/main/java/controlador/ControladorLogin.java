@@ -60,6 +60,7 @@ public class ControladorLogin {
 	@FXML
     private void handleOk() {
 		
+		usuarioObjeto = new Usuario();
 		usuarioObjeto.setNombreUsuario(usuario.getText());
 		usuarioObjeto.setPassword(password.getText());
 		
