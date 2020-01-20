@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="300.0" minWidth="600.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.ControladorDePersona">
+<AnchorPane minHeight="300.0" minWidth="600.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.325" layoutX="100.0" layoutY="24.0" minHeight="160.0" minWidth="200.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -25,8 +26,9 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background" stylesheets="@DarkTheme.css">
                <children>
-                  <Label layoutX="20.0" layoutY="14.0" text="Datos" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <GridPane layoutY="121.0" prefHeight="209.0" prefWidth="406.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
+                  <Label layoutX="252.0" layoutY="13.0" styleClass="label-red" text="Label" textFill="RED" />
+                  <Label layoutX="14.0" layoutY="13.0" text="Datos Prueba" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="13.0" />
+                  <GridPane layoutY="41.0" prefHeight="216.0" prefWidth="390.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="41.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -57,6 +59,7 @@
                         <Button mnemonicParsing="false" text="Baja" />
                      </children>
                   </HBox>
+                  <Label layoutX="316.0" layoutY="13.0" styleClass="label-red" text="Label" />
                </children>
             </AnchorPane>
         </items>

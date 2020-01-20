@@ -65,16 +65,17 @@ public class ControladorLogin {
 		
         if (validarUsuario(usuarioObjeto)) {
         	
-        	Alert alert = new Alert(AlertType.ERROR);
-            alert.initOwner(dialogStage);
-            alert.setTitle("Valido");
-            alert.setHeaderText("Has entrado");
-            alert.setContentText("De puta madre tio");
-            
-            alert.showAndWait();
-            
-            okClicked = true;
-            dialogStage.close();
+//        	Alert alert = new Alert(AlertType.ERROR);
+//            alert.initOwner(dialogStage);
+//            alert.setTitle("Valido");
+//            alert.setHeaderText("Has entrado");
+//            alert.setContentText("De puta madre tio");
+//            
+//            alert.showAndWait();
+//            
+        	okClicked = true;
+        	abrirVentanaAplicacion();
+//            dialogStage.close();
 
         }
     }
@@ -117,12 +118,6 @@ public class ControladorLogin {
 				validar = false;
 			} else {
 				validar = true;
-
-				/*
-				 * Hicimos esto para ver si salian los datos correctos for (int j = 0; j <
-				 * competidor.size(); j++) {
-				 * System.out.println(competidor.get(j).getApellidos()); }
-				 */
 			}
 		}
 
@@ -136,6 +131,16 @@ public class ControladorLogin {
      */
     public void setMainApp(MainF5JApp mainApp) {
         this.mainApp = mainApp;
+    }
+    
+    /**
+     * Called when the user clicks the new button. Opens a dialog to edit
+     * details for a new person.
+     */
+    @FXML
+    private void abrirVentanaAplicacion() {
+         mainApp.mostrarVentanaInterfaz();;
+        
     }
 
 }

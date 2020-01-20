@@ -16,6 +16,13 @@
     -fx-opacity: 1;
 }
 
+.label-red {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: red;
+    -fx-opacity: 1;
+}
+
 .label-header {
     -fx-font-size: 32pt;
     -fx-font-family: "Segoe UI Light";
@@ -62,6 +69,7 @@
     -fx-border-color: transparent #1d1d1d transparent #1d1d1d;
     -fx-background-color: transparent, derive(#1d1d1d,20%);
 }
+
 
 .split-pane {
     -fx-padding: 1 0 0 0;

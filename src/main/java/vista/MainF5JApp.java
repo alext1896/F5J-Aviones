@@ -93,7 +93,7 @@ public class MainF5JApp extends Application  {
             e.printStackTrace();
         }
     }
-    
+        
     /**
      * Opens a dialog to edit details for the specified person. If the user
      * clicks OK, the changes are saved into the provided person object and true
@@ -129,6 +129,28 @@ public class MainF5JApp extends Application  {
         } catch (IOException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+    
+    /**
+     * Shows the person overview inside the root layout.
+     */
+    public void mostrarVentanaInterfaz() {
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainF5JApp.class.getResource("../vista/InterfazUser.fxml"));
+            AnchorPane interfazOverview = (AnchorPane) loader.load();
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(interfazOverview);
+
+            // Give the controller access to the main app.
+            //ControladorLogin controller = loader.getController();
+           // controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
