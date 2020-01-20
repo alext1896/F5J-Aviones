@@ -102,7 +102,7 @@ public class MainF5JApp extends Application  {
      * @param person the person object to be edited
      * @return true if the user clicked OK, false otherwise.
      */
-    public boolean showPersonEditDialog(Usuario usuario) {
+    public boolean mostrarVentanaRegistro(Usuario usuario) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();

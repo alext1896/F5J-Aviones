@@ -30,7 +30,6 @@ public class ControladorLogin {
     
     private MainF5JApp mainApp;
 
-
 	private final static String SELECT_USUARIO = "SELECT numLicencia, nombreUsuario, nombre, apellidos, password FROM Usuario WHERE nombreUsuario = :nombreUsuario AND  password = :password";
 	
 	 /**
@@ -50,7 +49,7 @@ public class ControladorLogin {
         this.dialogStage = dialogStage;
     }
     
-    public boolean isOkClicked() {
+    public boolean pulsarOk() {
         return okClicked;
     }
     
@@ -58,7 +57,7 @@ public class ControladorLogin {
      * Called when the user clicks ok.
      */
 	@FXML
-    private void handleOk() {
+    private void funcionOk() {
 		
 		usuarioObjeto = new Usuario();
 		usuarioObjeto.setNombreUsuario(usuario.getText());
@@ -85,9 +84,9 @@ public class ControladorLogin {
      * details for a new person. 
      */
     @FXML
-    private void handleNewUsuario() {
-        Usuario tempUsuario = new Usuario();
-        boolean okClicked = mainApp.showPersonEditDialog(tempUsuario);
+    private void funcionNuevoUsuario() {
+        Usuario usuario = new Usuario();
+        boolean okClicked = mainApp.mostrarVentanaRegistro(usuario);
 //        if (okClicked) {
 //            mainApp.getPersonData().add(tempUsuario);
 //        }
@@ -124,7 +123,6 @@ public class ControladorLogin {
 				 * competidor.size(); j++) {
 				 * System.out.println(competidor.get(j).getApellidos()); }
 				 */
-
 			}
 		}
 
@@ -132,7 +130,8 @@ public class ControladorLogin {
 	}
 	
 	 /**
-     * Is called by the main application to give a reference back to itself.
+     * 
+	 * Es llamado por la aplicación principal para devolverse una referencia a sí mismo.
      * @param mainApp
      */
     public void setMainApp(MainF5JApp mainApp) {
