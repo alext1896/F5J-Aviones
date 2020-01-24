@@ -28,6 +28,8 @@ CREATE TABLE `Prueba` (
   `idPrueba` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `fecha` timestamp(4) NULL DEFAULT NULL,
+  `limite` timestamp(4) NULL DEFAULT NULL,
+  `ciudad` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPrueba`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -50,7 +52,7 @@ DROP TABLE IF EXISTS `Usuario`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Usuario` (
   `numLicencia` int(11) NOT NULL,
-  `nombreUsuario` varchar(45) DEFAULT NULL, 
+  `nombreUsuario` varchar(45) DEFAULT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `apellidos` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
@@ -76,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-01-08  9:48:50
+-- Dump completed on 2020-01-24 11:52:26

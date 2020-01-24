@@ -1,28 +1,58 @@
 package vista;
 
 import java.io.IOException;
+import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 
+import controlador.ControladorInterfazUser;
 import controlador.ControladorLogin;
 import controlador.ControladorRaiz;
 import controlador.ControladorRegistro;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modelo.Prueba;
 import modelo.Usuario;
+import util.Utilidades;
 
 public class MainF5JApp extends Application  {
 	 private Stage primaryStage;
 	 private BorderPane rootLayout;
+	 private ObservableList<Prueba> pruebaData = FXCollections.observableArrayList();
+	 private Session session;
+	 
+	 private static String obtenerPruebas = "FROM Prueba";
+
+	
 	/**
      * Constructor
      */
     public MainF5JApp() {
     
     }
+    
+    public void empezar() {
+		session = Utilidades.getSessionFactory().openSession();
+		session.beginTransaction();
+	}
+	
+	private void terminar() {
+		session.getTransaction().commit();
+		session.close();
+	}
+    
+    public ObservableList<Prueba> getPruebaData() {
+		 return pruebaData;
+	 }
     
 
 	public static void main(String[] args) {
@@ -36,7 +66,7 @@ public class MainF5JApp extends Application  {
 
         initRootLayout();
 
-        showPersonOverview();
+        showLoginOverview();
     }
     
     /**
@@ -75,7 +105,7 @@ public class MainF5JApp extends Application  {
     /**
      * Shows the person overview inside the root layout.
      */
-    public void showPersonOverview() {
+    public void showLoginOverview() {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -146,12 +176,33 @@ public class MainF5JApp extends Application  {
             rootLayout.setCenter(interfazOverview);
 
             // Give the controller access to the main app.
-            //ControladorLogin controller = loader.getController();
-           // controller.setMainApp(this);
+            ControladorInterfazUser controller = loader.getController();
+            controller.setMainApp(this);
+            loadPruebaFromSQL();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
+	public void loadPruebaFromSQL() {
+			empezar();
+			@SuppressWarnings("unchecked")
+			Query<Prueba> cu = session.createQuery(obtenerPruebas);
+			List<Prueba> pruebas = cu.list();
+			terminar();		
+		
+		try {
+			pruebaData.clear();
+			for(int i = 0; i < pruebas.size(); i++) {
+				Prueba prueba = (Prueba) pruebas.get(i);
+				pruebaData.add(prueba);
+			}
+		} catch (Exception e) { // catches ANY exception
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error");
+			alert.setHeaderText("No se encuentran datos");
+		}
+	}
 
 }

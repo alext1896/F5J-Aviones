@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="300.0" minWidth="600.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="300.0" minWidth="600.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorInterfazUser">
    <children>
       <SplitPane dividerPositions="0.325" layoutX="100.0" layoutY="24.0" minHeight="160.0" minWidth="200.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="personTable" layoutY="57.0" prefHeight="298.0" prefWidth="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="pruebaTable" layoutY="57.0" prefHeight="298.0" prefWidth="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="nombreColumna" text="Prueba" />
-                      <TableColumn fx:id="apellidoColumna" prefWidth="84.0" text="Fecha" />
+                      <TableColumn fx:id="pruebaColumna" text="Prueba" />
+                      <TableColumn fx:id="fechaColumna" prefWidth="84.0" text="Fecha" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -48,7 +48,7 @@
                         <Label fx:id="nombreEtiqueta" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="limiteEtiqueta" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="ciudadEtiqueta" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="pilotosEtiqueta" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="numPilotosEtiqueta" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label text="Id" />
                         <Label fx:id="idEtiqueta" text="Label" GridPane.columnIndex="1" />
                      </children>

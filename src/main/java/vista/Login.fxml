@@ -21,8 +21,8 @@
       </ImageView>
       <HBox layoutX="182.0" layoutY="231.0" prefHeight="38.0" prefWidth="290.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#handleOk" prefHeight="33.0" prefWidth="116.0" text="ENTRAR" />
-            <Button mnemonicParsing="false" onAction="#handleNewUsuario" text="REGISTRO" />
+            <Button mnemonicParsing="false" onAction="#funcionOk" prefHeight="33.0" prefWidth="116.0" text="ENTRAR" />
+            <Button mnemonicParsing="false" onAction="#funcionNuevoUsuario" text="REGISTRO" />
          </children>
       </HBox>
       <TextField fx:id="usuario" layoutX="195.0" layoutY="108.0" />
