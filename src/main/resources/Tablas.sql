@@ -79,3 +79,18 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-01-24 11:52:26
+
+DROP TABLE IF EXISTS `Competicion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Competicion` (
+  `idCompeticion` int(11) NOT NULL AUTO_INCREMENT,
+  `idPrueba` int(11) DEFAULT NULL,
+  `numLicencia` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idCompeticion`),
+  KEY `fk_idPrueba_competicion_idx` (`idPrueba`),
+  KEY `fk_idPiloto_Competicion_idx` (`numLicencia`),
+  CONSTRAINT `fk_idPiloto_Competicion` FOREIGN KEY (`numLicencia`) REFERENCES `Usuario` (`numLicencia`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_idPrueba_competicion` FOREIGN KEY (`idPrueba`) REFERENCES `Prueba` (`idPrueba`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
