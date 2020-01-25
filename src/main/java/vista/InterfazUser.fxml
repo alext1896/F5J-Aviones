@@ -55,7 +55,7 @@
                   </GridPane>
                   <HBox alignment="BOTTOM_RIGHT" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Alta" />
+                        <Button mnemonicParsing="false" onAction="#altaPrueba" text="Alta" />
                         <Button mnemonicParsing="false" text="Baja" />
                      </children>
                   </HBox>

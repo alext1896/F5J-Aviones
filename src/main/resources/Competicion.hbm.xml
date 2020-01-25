@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25-ene-2020 15:54:07 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="modelo.Competicion" table="Competicion">
+        <id name="idCompeticion" type="int">
+            <column name="idCompeticion" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="idPrueba" class="modelo.Prueba" fetch="join">
+            <column name="idPrueba" />
+        </many-to-one>
+        <many-to-one name="numLicencia" class="modelo.Usuario" fetch="join">
+            <column name="numLicencia" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

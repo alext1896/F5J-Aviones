@@ -41,6 +41,11 @@ public class Prueba {
 		this.fechaPrueba = fechaPrueba;
 	}
 	
+	public Prueba(int idPrueba, String nombre) {
+		this.idPrueba = idPrueba;
+		this.nombre = nombre;
+	}
+
 	public int getIdPrueba() {
 		return idPrueba;
 	}

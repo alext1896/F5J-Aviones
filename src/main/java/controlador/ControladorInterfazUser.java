@@ -1,14 +1,21 @@
 package controlador;
 
 import java.time.LocalDate;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import modelo.Competicion;
 import modelo.Prueba;
+import modelo.Usuario;
 import util.DateUtil;
+import util.Utilidades;
 import vista.MainF5JApp;
 
 public class ControladorInterfazUser {
@@ -32,6 +39,12 @@ public class ControladorInterfazUser {
     private Label ciudadEtiqueta;
     @FXML
     private Label numPilotosEtiqueta;
+    
+    private int idPrueba1; 
+    
+//    private final static String COUNT_PILOTOS = "SELECT COUNT(idCompeticion) FROM Competicion WHERE idPrueba = :idPrueba";
+    
+//    private String contarPilotos = "SELECT COUNT(idPru"
 
 	 /**
      * Initializes the controller class. This method is automatically called
@@ -48,6 +61,7 @@ public class ControladorInterfazUser {
         // Listen for selection changes and show the person details when changed.
         pruebaTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showPruebaDetails(newValue));
+        
     }
 
     /**
@@ -83,6 +97,8 @@ public class ControladorInterfazUser {
         	nombreEtiqueta.setText(prueba.getNombre());
             limiteEtiqueta.setText(DateUtil.format(prueba.getLimitePrueba()));
             ciudadEtiqueta.setText(prueba.getCiudad());
+            
+            idPrueba1 = prueba.getIdPrueba();
             //numPilotosEtiqueta.setText(prueba.get);
             // TODO: We need a way to convert the birthday into a String! 
             // birthdayLabel.setText(...);
@@ -95,6 +111,40 @@ public class ControladorInterfazUser {
         	numPilotosEtiqueta.setText("");
         }
     }
+    
+    public void altaPrueba() {
+
+		Session sesion = Utilidades.getSessionFactory().openSession();
+		sesion.beginTransaction();
+		Prueba prueba = new Prueba();
+		Usuario usuario = new Usuario ();
+		prueba.setIdPrueba(idPrueba1);
+		usuario.setNumLicencia(12);
+		Competicion altaPrueba = new Competicion (prueba, usuario);
+		sesion.save(altaPrueba);
+		sesion.getTransaction().commit();
+		sesion.close();
+	}
+    
+//    public void contarPilotosInscritos (Competicion idCompeticion) {
+//    	Session sesion = Utilidades.getSessionFactory().openSession();
+//		sesion.beginTransaction();
+//		Query<Usuario> query = sesion.createNativeQuery(COUNT_PILOTOS, Competicion.class);
+//
+//		query.setParameter("idCompeticion", idPrueba.getIdCompeticion());
+//
+//		List<Usuario> competicion = query.list();
+//
+//		// competicion = query.list();
+//
+//		sesion.getTransaction().commit();
+//
+//		sesion.close();
+//    	
+//    }
+    
+    
+    
     
     
     
