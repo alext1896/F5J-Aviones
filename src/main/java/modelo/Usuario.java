@@ -70,8 +70,4 @@ public class Usuario {
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}
-	
-	
-	
-	
 }

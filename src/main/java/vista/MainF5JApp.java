@@ -29,7 +29,6 @@ public class MainF5JApp extends Application  {
 	 private BorderPane rootLayout;
 	 private ObservableList<Prueba> pruebaData = FXCollections.observableArrayList();
 	 private Session session;
-	 
 	 private static String obtenerPruebas = "FROM Prueba";
 
 	
@@ -37,7 +36,7 @@ public class MainF5JApp extends Application  {
      * Constructor
      */
     public MainF5JApp() {
-    
+    	
     }
     
     public void empezar() {
@@ -178,8 +177,8 @@ public class MainF5JApp extends Application  {
             // Give the controller access to the main app.
             ControladorInterfazUser controller = loader.getController();
             controller.setMainApp(this);
-            loadPruebaFromSQL();
-
+             loadPruebaFromSQL();
+             
         } catch (IOException e) {
             e.printStackTrace();
         }

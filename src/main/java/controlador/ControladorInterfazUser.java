@@ -1,10 +1,8 @@
 package controlador;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -39,13 +37,21 @@ public class ControladorInterfazUser {
     private Label ciudadEtiqueta;
     @FXML
     private Label numPilotosEtiqueta;
+    @FXML
+    private Label numLicencia;
+    @FXML
+    private Label nombreUsuario;
     
+    ControladorLogin controlador = new ControladorLogin();
     private int idPrueba1; 
     
+	Prueba prueba = new Prueba();
+	Usuario usuario = new Usuario ();
+	
+	
+	
 //    private final static String COUNT_PILOTOS = "SELECT COUNT(idCompeticion) FROM Competicion WHERE idPrueba = :idPrueba";
     
-//    private String contarPilotos = "SELECT COUNT(idPru"
-
 	 /**
      * Initializes the controller class. This method is automatically called
      * after the fxml file has been loaded.
@@ -113,18 +119,19 @@ public class ControladorInterfazUser {
     }
     
     public void altaPrueba() {
-
+    	
+		prueba.setIdPrueba(idPrueba1);
+		ControladorLogin controlador = new ControladorLogin();
+		usuario = controlador.getNewUsuario();
+		Competicion altaPrueba = new Competicion (prueba, usuario);
+		
 		Session sesion = Utilidades.getSessionFactory().openSession();
 		sesion.beginTransaction();
-		Prueba prueba = new Prueba();
-		Usuario usuario = new Usuario ();
-		prueba.setIdPrueba(idPrueba1);
-		usuario.setNumLicencia(12);
-		Competicion altaPrueba = new Competicion (prueba, usuario);
 		sesion.save(altaPrueba);
 		sesion.getTransaction().commit();
 		sesion.close();
 	}
+
     
 //    public void contarPilotosInscritos (Competicion idCompeticion) {
 //    	Session sesion = Utilidades.getSessionFactory().openSession();
