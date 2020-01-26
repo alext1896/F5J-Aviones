@@ -68,6 +68,9 @@ public class ControladorInterfazUser {
         pruebaTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showPruebaDetails(newValue));
         
+        numLicencia.setText(Integer.toString(controlador.getNewUsuario().getNumLicencia()));
+        nombreUsuario.setText(controlador.getNewUsuario().getNombreUsuario());
+        
     }
 
     /**

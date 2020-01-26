@@ -108,7 +108,7 @@ public class ControladorLogin {
 		sesion.getTransaction().commit();
 
 		sesion.close();
-		newUsuario = competidor.get(0);
+		
 		boolean validar = false;
 
 		for (int i = 0; i < competidor.size(); i++) {
@@ -116,6 +116,8 @@ public class ControladorLogin {
 				validar = false;
 			} else {
 				validar = true;
+				newUsuario = competidor.get(0);
+				
 			}
 		}
 		return validar;
@@ -144,5 +146,8 @@ public class ControladorLogin {
 	public Usuario getNewUsuario() {
 		return newUsuario;
 	}
-
+	
+	public void setNewUsuario (Usuario newUsuario) {
+		this.newUsuario = newUsuario;
+	}
 }
