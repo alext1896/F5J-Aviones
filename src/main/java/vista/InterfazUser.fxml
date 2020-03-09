@@ -56,7 +56,7 @@
                   <HBox alignment="BOTTOM_RIGHT" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#altaPrueba" text="Alta" />
-                        <Button mnemonicParsing="false" text="Baja" />
+                        <Button mnemonicParsing="false" onAction="#bajaPrueba" text="Baja" />
                      </children>
                   </HBox>
                   <Label fx:id="numLicencia" layoutX="316.0" layoutY="13.0" styleClass="label-red" text="Label" />
