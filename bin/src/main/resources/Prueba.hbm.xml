@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-ene-2020 10:30:45 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="modelo.Prueba" table="Prueba">
+        <id name="idPrueba" type="int">
+            <column name="idPrueba" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" />
+        </property>
+        <property name="fechaPrueba" type="java.time.LocalDate">
+            <column name="fecha" />
+        </property>
+        <property name="limitePrueba" type="java.time.LocalDate">
+            <column name="limite" />
+        </property>
+        <property name="ciudad" type="java.lang.String">
+            <column name="ciudad" />
+        </property>
+    </class>
+</hibernate-mapping>

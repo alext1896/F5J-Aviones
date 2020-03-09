@@ -94,28 +94,3 @@ CREATE TABLE `Competicion` (
   CONSTRAINT `fk_idPrueba_competicion` FOREIGN KEY (`idPrueba`) REFERENCES `Prueba` (`idPrueba`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('1', 'Enero', '2020-01-01', '2020-01-28', 'Madrid');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('2', 'Febrero', '2020-02-01', '2020-02-28', 'Bilbao');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('3', 'Marzo', '2020-03-01', '2020-03-28', 'Madrid');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('4', 'Abril', '2020-04-01', '2020-04-28', 'Barcelona');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('5', 'Mayo', '2020-05-01', '2020-05-28', 'Madrid');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('6', 'Junio', '2020-06-01', '2020-06-28', 'Madrid');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('7', 'Julio', '2020-07-01', '2020-07-28', 'Zaragoza');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('8', 'Agosto', '2020-08-01', '2020-08-28', 'Valencia');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('9', 'Septiembre', '2020-09-01', '2020-09-28', 'Madrid');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('10', 'Octubre', '2020-10-01', '2020-10-28', 'Huesca');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('11', 'Noviembre', '2020-11-01', '2020-11-28', 'Sevilla');
-
-INSERT INTO `F5J`.`Prueba` (`idPrueba`, `nombre`, `fecha`, `limite`, `ciudad`) VALUES ('12', 'Diciembre', '2020-12-01', '2020-12-28', 'A Coruña');
-

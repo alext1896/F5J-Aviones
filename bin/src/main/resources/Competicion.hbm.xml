@@ -6,7 +6,7 @@
     <class name="modelo.Competicion" table="Competicion">
         <id name="idCompeticion" type="int">
             <column name="idCompeticion" />
-            <generator class="identity" />
+            <generator class="assigned" />
         </id>
         <many-to-one name="idPrueba" class="modelo.Prueba" fetch="join">
             <column name="idPrueba" />
